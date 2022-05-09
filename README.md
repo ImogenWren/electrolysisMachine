@@ -3,7 +3,7 @@
 
 
 
-[Reddit Informational Source](https://www.reddit.com/r/electronics/comments/8ek9dt/i_built_an_electrolysis_machine_epilator/)
+[Reddit Source](https://www.reddit.com/r/electronics/comments/8ek9dt/i_built_an_electrolysis_machine_epilator/)
 
 ## System Description
 
@@ -41,4 +41,5 @@ _second revision of this thing with a lot more safety considerations. The curren
 
 
 ## Current Schematic
+![electrolysisMachine_Schematic_source](https://user-images.githubusercontent.com/53580358/167491659-b3adbdfa-fd45-4e4e-a239-ae5a97defdb3.png)
 
