@@ -320,6 +320,14 @@
     [
       "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55",
       ""
+    ],
+    [
+      "580159ba-edd3-41e3-abcd-ff933f8f1a26",
+      "Power Distribution"
+    ],
+    [
+      "40e57fa2-6889-463a-9517-9491e4c77d28",
+      "Microcontroller"
     ]
   ],
   "text_variables": {}
