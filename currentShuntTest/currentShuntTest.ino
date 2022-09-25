@@ -41,10 +41,16 @@
 
 */
 
+
+
+
 #define VIN_SAMPLE_PIN A7
-#define SHUNT_SAMPLE_PIN A5
+#define SHUNT_SAMPLE_PIN A3
 
 #include <autoDelay.h>
+#include <buttonObject.h>
+
+
 
 autoDelay sampleDelay;
 
@@ -70,6 +76,7 @@ char cs_Vin_scaled[20];          // True Scaled voltage as char string
 uint16_t u_shuntADC;               // Value returned from ADC
 float f_shunt_Vdrop;            // Measured voltage drop across shunt resistor
 float f_shuntI;              // Calculated current through shunt resistor
+int16_t shuntI_uA;           // Calculated current in micro amps
 
 #define SHUNT_RESISTOR 500.0   // Shunt resistance in ohms
 #define SHUNT_SAMPLE_GAIN 1.0  // gain factor of shunt voltage sampling
@@ -98,6 +105,46 @@ float voltsPerADC = 0.01;
 #define VIN_ADC_OFFSET_HIGH -0.20   // offset value between true voltage and calculated voltage at Vmax (15v)
 #define VIN_ADC_OFFSET_LOW -0.05      // offset value between true voltage and calculated voltage at Vmin (5v)
 float vin_ADV_offset = 0;         // calculated average during setup
+
+
+
+/* Adding code for trigger button input
+ *  current set pot input, and
+ *  transistor control output
+ * 
+ *  At the moment no feedback control, trigger pin sets transistor output high
+ *  Current set pot is read then scaled to mA value but this value is not used yet
+ * 
+ */
+
+#define CONTROL_POT_PIN A0
+#define TRIGGER_INPUT_PIN 7
+#define TRANSISTOR_OUTPUT_PIN 3
+uint16_t controlPotValue;
+uint16_t uA_setpoint;
+
+buttonObject button(TRIGGER_INPUT_PIN, BUTTON_PULL_LOW);    // Set up instance of buttonObject. Pass Button Pin & whether it pulls HIGH, or LOW when pressed.
+
+void setupDigitalPins(){
+  pinMode(TRIGGER_INPUT_PIN, INPUT);
+  pinMode(TRANSISTOR_OUTPUT_PIN, OUTPUT);
+}
+
+
+void checkButton(){
+//  button.buttonLoop();
+digitalWrite(TRANSISTOR_OUTPUT_PIN, button.detectButton());  
+}
+
+void controlPot(){
+ controlPotValue = analogRead(CONTROL_POT_PIN);   // Sample the ADC
+ // This then needs to be scaled to 0 to 2ma. Instead going to scale from 0 to 2000uA to avoid floats
+ uA_setpoint = map(controlPotValue, 0, 1024, 0, 2000);
+ Serial.print("uA setpoint: ");
+ Serial.print(uA_setpoint);
+ Serial.print(" uA  |");
+ 
+}
 
 void setupVinConversions() {
   voltsPerADC = ADC_MAX / 1024.0;
@@ -141,11 +188,14 @@ void calcVin() {
 void calcShunt() {
   f_shunt_Vdrop = u_shuntADC * voltsPerADC;            // Measured voltage drop across shunt resistor
   f_shuntI = ((f_shunt_Vdrop / SHUNT_RESISTOR) * 1000) + SHUNT_CURRENT_OFFSET;
+  shuntI_uA = int(f_shuntI * 1000);
   Serial.print(" Shunt Vdrop: ");
   Serial.print(f_shunt_Vdrop);
   Serial.print(" Shunt Current: ");
   Serial.print(f_shuntI);
-  Serial.print(" mA ");
+  Serial.print(" mA, ");
+  Serial.print(shuntI_uA);
+  Serial.print(" uA");
 }
 
 
@@ -162,6 +212,7 @@ float testValue = -96.12345;
 void setup() {
   Serial.begin(115200);
   setupVinConversions();
+  setupDigitalPins();
 }
 
 
@@ -171,10 +222,12 @@ void loop() {
   //
   //strcpy(
   // Serial.println(returnedString.fString);
+  controlPot();
   sampleADCs();
   calcVin();
-  calcShunt(); +
+  calcShunt(); 
+  checkButton();
   Serial.println(" ");
-  delay(500);
+ delay(200);
 
 }
