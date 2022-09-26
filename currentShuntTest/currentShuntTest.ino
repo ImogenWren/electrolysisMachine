@@ -45,7 +45,7 @@
 
 
 #define VIN_SAMPLE_PIN A7
-#define SHUNT_SAMPLE_PIN A3
+#define SHUNT_SAMPLE_PIN A4
 
 #include <autoDelay.h>
 #include <buttonObject.h>
@@ -53,6 +53,9 @@
 
 
 autoDelay sampleDelay;
+autoDelay printDelay;
+autoDelay inputDelay;
+autoDelay outputDelay;
 
 #include "returnStrings.h"
 
@@ -109,41 +112,70 @@ float vin_ADV_offset = 0;         // calculated average during setup
 
 
 /* Adding code for trigger button input
- *  current set pot input, and
- *  transistor control output
- * 
- *  At the moment no feedback control, trigger pin sets transistor output high
- *  Current set pot is read then scaled to mA value but this value is not used yet
- * 
- */
+    current set pot input, and
+    transistor control output
+
+    At the moment no feedback control, trigger pin sets transistor output high
+    Current set pot is read then scaled to mA value but this value is not used yet
+
+*/
 
 #define CONTROL_POT_PIN A0
 #define TRIGGER_INPUT_PIN 7
 #define TRANSISTOR_OUTPUT_PIN 3
+#define INDICATOR_PIN 9   // Mirrors output pin for LED indicator or other indication method
 uint16_t controlPotValue;
 uint16_t uA_setpoint;
 
-buttonObject button(TRIGGER_INPUT_PIN, BUTTON_PULL_LOW);    // Set up instance of buttonObject. Pass Button Pin & whether it pulls HIGH, or LOW when pressed.
+buttonObject button(TRIGGER_INPUT_PIN, BUTTON_PULL_HIGH);    // Set up instance of buttonObject. Pass Button Pin & whether it pulls HIGH, or LOW when pressed.
 
-void setupDigitalPins(){
+/*
+    PID controller functions
+
+    PID controller will control the current through the shunt resistor using PWM
+
+    pidController library will be used for maths
+
+
+*/
+
+#include <pidController.h>
+
+#define P_GAIN 1.0
+#define I_GAIN 0.0
+#define D_GAIN 0.0
+
+pidController PID;
+
+void setupPID() {
+  PID.begin();
+  PID.updateGain(P_GAIN, I_GAIN, D_GAIN);
+}
+
+
+void setupDigitalPins() {
   pinMode(TRIGGER_INPUT_PIN, INPUT);
   pinMode(TRANSISTOR_OUTPUT_PIN, OUTPUT);
 }
 
-
-void checkButton(){
-//  button.buttonLoop();
-digitalWrite(TRANSISTOR_OUTPUT_PIN, button.detectButton());  
+void updateOutput(uint8_t output_value) {
+  analogWrite(TRANSISTOR_OUTPUT_PIN, output_value);
+  analogWrite(INDICATOR_PIN, output_value);    // Mirror output for easy indication
 }
 
-void controlPot(){
- controlPotValue = analogRead(CONTROL_POT_PIN);   // Sample the ADC
- // This then needs to be scaled to 0 to 2ma. Instead going to scale from 0 to 2000uA to avoid floats
- uA_setpoint = map(controlPotValue, 0, 1024, 0, 2000);
- Serial.print("uA setpoint: ");
- Serial.print(uA_setpoint);
- Serial.print(" uA  |");
- 
+void checkButton() {
+  //  button.buttonLoop();
+  digitalWrite(TRANSISTOR_OUTPUT_PIN, button.detectButton());
+}
+
+void controlPot() {
+  controlPotValue = analogRead(CONTROL_POT_PIN);   // Sample the ADC
+  // This then needs to be scaled to 0 to 2ma. Instead going to scale from 0 to 2000uA to avoid floats
+  uA_setpoint = map(controlPotValue, 0, 1024, 0, 2000);
+  Serial.print("uA setpoint: ");
+  Serial.print(uA_setpoint);
+  Serial.print(" uA  |");
+
 }
 
 void setupVinConversions() {
@@ -213,21 +245,39 @@ void setup() {
   Serial.begin(115200);
   setupVinConversions();
   setupDigitalPins();
+  setupPID();
 }
 
 
 void loop() {
-  // char buffer[64];
-  // CHARFLOAT returnedString = {floatToString(testValue)};
-  //
-  //strcpy(
-  // Serial.println(returnedString.fString);
-  controlPot();
-  sampleADCs();
-  calcVin();
-  calcShunt(); 
-  checkButton();
-  Serial.println(" ");
- delay(200);
+
+
+  // Input Functions
+  // Check the PID Controller Settings and State
+  if (inputDelay.millisDelay(PID.g_input_delay_mS)) {
+    controlPot();
+    PID.updateSetpoint(uA_setpoint);
+  }
+
+  if (sampleDelay.microsDelay(PID.g_sample_delay_uS)) {
+    sampleADCs();
+    calcVin();
+    calcShunt();
+    checkButton();
+    PID.updateInput(shuntI_uA);
+    Serial.println(" ");
+  }
+  // Physical Output
+  if (outputDelay.microsDelay(PID.g_output_delay_uS)) {
+    PID.g_output_value = PID.PIDcontroller(PID.g_setpoint, PID.g_sensor_value, PID.g_output_value);
+    //  error_value = PID.g_setpoint - PID.g_sensor_value;
+    // average.addDataPoint(error_value);
+    // average_error = average.calcMean();
+    updateOutput(PID.g_output_value);
+  }
+
+
+ 
+  //delay(200);
 
 }
