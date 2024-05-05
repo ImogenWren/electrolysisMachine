@@ -20,6 +20,7 @@ Any attempt to follow the designs or guides within this repo are undertaken ENTI
 - Safe & Consistant operation of a constant current source, able to deliver up to 2.0 mA in pulses of up to 10s between probes attached to users skin.
 - Current Source should be controllable down to 0.0 mA, with a resolution of at least 0.2 mA and accuracy of +-0.2 mA. (Exact values to be reviewed)
 - Timer pulse should be controllable down to 1.0 mS, with a resolution of at least 0.5 mS, and accuracy of +-0.2 mS. (Exact values to be reviewed)
+- 0-2 mA current to voltage sensor with a resolution of at least 0.2 mA and accuracy of +-0.2 mA (Exact values to be reviewed)
 - Operation from 3S or less LiPo battery pack. (Can be reviewed and voltage increased if nessissary to achieve other design goals)
 - Battery Management System (BMS) Included.
 - Passive Safety system to cut power if 2.0 +-0.2 mA is exceeded.
@@ -29,13 +30,42 @@ Any attempt to follow the designs or guides within this repo are undertaken ENTI
  - Large display for SET_CURRENT, PULSE_TIME.
  - Settings menu to change MAX_CURRENT, MAX_PULSELENGTH
  - 1x Rotary Encoder with button for user inputs.
- - Save at least 3x User profiles for quick settings changes.
+ - 1x TRIGGER button
+ - 1x CANCEL button
+ - Save at least 3x User profiles for quick settings changes
 - 3D printable case to contain both electronics, battery system and probes.
 - Clear & Simple Build Manual
 - Clear & Simple operation instructions (Will need to collaborate to ensure clear communication of medical information)
 
 ### Strech Goals
 - 3D printable case to include hygenic supplies required for safe operation.
+
+## Project Steps:
+_These steps are each created with the intent of de-risking the project as quickly as possible,
+by focusing on small functional prototypes that can be intergrated at the earliest opportunity,
+avoiding increasing complexity untill individual sub-systems are proven._
+
+1. [] Model voltage controlled, 0-2mA constant current driver in LTspice. 
+2. [] Construct Current source prototype & Test.
+3. [] Model 0-2 mA current to 0-5 V sensing circuit in LTspice.
+4. [] Construct current sensor prototype & test.
+5. [] Integrate current sensor with Arduino controller and test ability to meet sensitivity requirements.
+6. [] Integrade constant current driver with Arduino controller, including manual (pot) controls, and test accuracy of output pulse against requirements.
+   6b. Create Alpha Version firmware for manual operation of the PULSE_OUTPUT  
+7. [] Model circuit protection concepts in LTspice.
+8. [] Integrate passive circuit protection to existing prototypes (if possible) and test against requirements.
+9. [] Integrate User Interface with existing prototypes and test function of dsiplay & all input devices.
+10. [] Finalise schematic & Design PCB
+10b. [] Start design of 3D printed enclosure, to coencide with PCB design (Though should not block PCB design or production) 
+11. [] Develop Beta version firmware including Functional user interface.
+12. [] Build Production prototype.
+13. [] Test Beta Firmware with Production prototype.
+14. [] Release Verified V1.0.0 PCB design & Make PCBs available to purchase.
+15. [] Release production Firmware.
+16. [] Develop "DIY Kit" Including build & user guides
+
+
+## State-of-the-Art
 
 ### Description of the Existing Reddit Design
 
