@@ -45,24 +45,24 @@ _These steps are each created with the intent of de-risking the project as quick
 by focusing on small functional prototypes that can be intergrated at the earliest opportunity,
 avoiding increasing complexity untill individual sub-systems are proven._
 
-1. [] Model voltage controlled, 0-2mA constant current driver in LTspice. 
-2. [] Construct Current source prototype & Test.
-3. [] Model 0-2 mA current to 0-5 V sensing circuit in LTspice.
-4. [] Construct current sensor prototype & test.
-5. [] Integrate current sensor with Arduino controller and test ability to meet sensitivity requirements.
-6. [] Integrade constant current driver with Arduino controller, including manual (pot) controls, and test accuracy of output pulse against requirements.
-   6b. Create Alpha Version firmware for manual operation of the PULSE_OUTPUT  
-7. [] Model circuit protection concepts in LTspice.
-8. [] Integrate passive circuit protection to existing prototypes (if possible) and test against requirements.
-9. [] Integrate User Interface with existing prototypes and test function of dsiplay & all input devices.
-10. [] Finalise schematic & Design PCB
-10b. [] Start design of 3D printed enclosure, to coencide with PCB design (Though should not block PCB design or production) 
-11. [] Develop Beta version firmware including Functional user interface.
-12. [] Build Production prototype.
-13. [] Test Beta Firmware with Production prototype.
-14. [] Release Verified V1.0.0 PCB design & Make PCBs available to purchase.
-15. [] Release production Firmware.
-16. [] Develop "DIY Kit" Including build & user guides
+1. Model voltage controlled, 0-2mA constant current driver in LTspice. []
+2. Construct Current source prototype & Test. []
+3. Model 0-2 mA current to 0-5 V sensing circuit in LTspice. []
+4. Construct current sensor prototype & test. []
+5. Integrate current sensor with Arduino controller and test ability to meet sensitivity requirements. []
+6. Integrade constant current driver with Arduino controller, including manual (pot) controls, and test accuracy of output pulse against requirements. []
+6b. Create Alpha Version firmware for manual operation of the PULSE_OUTPUT  [] 
+8. Model circuit protection concepts in LTspice. []
+9. Integrate passive circuit protection to existing prototypes (if possible) and test against requirements.[]
+10. Integrate User Interface with existing prototypes and test function of dsiplay & all input devices. []
+11. Finalise schematic & Design PCB []
+10b. Start design of 3D printed enclosure, to coencide with PCB design (Though should not block PCB design or production) []
+12. Develop Beta version firmware including Functional user interface. []
+13. Build Production prototype. []
+14. Test Beta Firmware with Production prototype. []
+15. Release Verified V1.0.0 PCB design & Make PCBs available to purchase. []
+16. Release production Firmware. []
+17. Develop "DIY Kit" Including build & user guides. []
 
 
 ## State-of-the-Art
