@@ -22,7 +22,7 @@ Any attempt to follow the designs or guides within this repo are undertaken ENTI
 - Timer pulse should be controllable down to 1.0 mS, with a resolution of at least 0.5 mS, and accuracy of +-0.2 mS. (Exact values to be reviewed)
 - 0-2 mA current to voltage sensor with a resolution of at least 0.2 mA and accuracy of +-0.2 mA (Exact values to be reviewed)
 - Operation from 3S or less LiPo battery pack. (Can be reviewed and voltage increased if nessissary to achieve other design goals)
-- Battery Management System (BMS) with USB-C AND 2.1mm DC jack (or similar generic connector) Included.
+- Battery Management System (BMS) with USB-C (If 5V is sufficient to charge) AND 2.1mm DC jack (or similar generic connector) included.
 - Passive Safety system to cut power if 2.0 +-0.2 mA is exceeded.
 - Passive safety system to cut power if 10s pulse time is exceeded.
 - Microcontroller will be AtMega328p OR Arduino Nano Dev board for ease of replication. 
@@ -39,6 +39,7 @@ Any attempt to follow the designs or guides within this repo are undertaken ENTI
 
 ### Strech Goals
 - 3D printable case to include hygenic supplies required for safe operation.
+- Chargeable on 5V USB, or 12V power.
 
 ## Project Steps:
 _These steps are each created with the intent of de-risking the project as quickly as possible,
