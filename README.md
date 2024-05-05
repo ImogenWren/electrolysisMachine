@@ -50,13 +50,13 @@ avoiding increasing complexity untill individual sub-systems are proven._
 3. Model 0-2 mA current to 0-5 V sensing circuit in LTspice. []
 4. Construct current sensor prototype & test. []
 5. Integrate current sensor with Arduino controller and test ability to meet sensitivity requirements. []
-6. Integrade constant current driver with Arduino controller, including manual (pot) controls, and test accuracy of output pulse against requirements. []
+6. Integrade constant current driver with Arduino controller, including manual (pot) controls, and test accuracy of output pulse against requirements. [] <br>
 6b. Create Alpha Version firmware for manual operation of the PULSE_OUTPUT  [] 
 8. Model circuit protection concepts in LTspice. []
 9. Integrate passive circuit protection to existing prototypes (if possible) and test against requirements.[]
 10. Integrate User Interface with existing prototypes and test function of dsiplay & all input devices. []
 11. Finalise schematic & Design PCB []
-10b. Start design of 3D printed enclosure, to coencide with PCB design (Though should not block PCB design or production) []
+10b. Start design of 3D printed enclosure, to coencide with PCB design (Though should not block PCB design or production) []<br>
 12. Develop Beta version firmware including Functional user interface. []
 13. Build Production prototype. []
 14. Test Beta Firmware with Production prototype. []
