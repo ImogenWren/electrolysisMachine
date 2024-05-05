@@ -55,8 +55,8 @@ avoiding increasing complexity untill individual sub-systems are proven._
 8. Model circuit protection concepts in LTspice. []
 9. Integrate passive circuit protection to existing prototypes (if possible) and test against requirements.[]
 10. Integrate User Interface with existing prototypes and test function of dsiplay & all input devices. []
-11. Finalise schematic & Design PCB []
-10b. Start design of 3D printed enclosure, to coencide with PCB design (Though should not block PCB design or production) []<br>
+11. Finalise schematic & Design PCB [] <br>
+10b. Start design of 3D printed enclosure, to coencide with PCB design (Though should not block PCB design or production) []
 12. Develop Beta version firmware including Functional user interface. []
 13. Build Production prototype. []
 14. Test Beta Firmware with Production prototype. []
