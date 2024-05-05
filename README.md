@@ -65,6 +65,10 @@ avoiding increasing complexity untill individual sub-systems are proven._
 16. Release production Firmware. []
 17. Develop "DIY Kit" Including build & user guides. []
 
+# Project Log
+## Phase 1: Model Voltage Controlled Current Source
+- Current Servo, Voltage Controlled Current Source
+
 
 ## State-of-the-Art
 
