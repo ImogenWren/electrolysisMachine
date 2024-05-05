@@ -68,6 +68,12 @@ avoiding increasing complexity untill individual sub-systems are proven._
 # Project Log
 ## Phase 1: Model Voltage Controlled Current Source
 - Current Servo, Voltage Controlled Current Source
+ ![Op-Amp-Voltage-Controlled-Current-Source-Circuit-Diagram](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/14538ed3-4064-43b1-9a8e-5d472b6c1dae)
+"The third requirement is the shunt resistor. Let's stick into 1ohms 2watt resistor. Additional two resistors are required, one for the MOSFET gate resistor and the other one is the feedback resistor. These two are required for reducing the loading effect. However, the drop between these two resistors is negligible.
+
+Now, we need a power source, it is a bench power supply. There are two channels available in the bench power supply. One of them, the first channel is used to provide power to the Circuit and the other one which is the second channel used to provide the variable voltage to control the source current of the circuit. As the control voltage is applied from an external source, both channels need to be in the same potential, thus the ground terminal of the second channel is connected across the first channel ground terminal."
+
+
 
 
 ## State-of-the-Art
