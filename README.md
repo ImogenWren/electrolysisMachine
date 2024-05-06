@@ -76,6 +76,7 @@ Now, we need a power source, it is a bench power supply. There are two channels 
 ### LTspice modelling
 Most linear response found. Will work with 3v3 logic
 ![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/24817674-8046-4430-89f8-011a9acf5891)
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/ee70646f-9a43-44bd-b7c0-aad7430b6b55)
 
 
 
