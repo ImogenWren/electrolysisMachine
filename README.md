@@ -73,6 +73,9 @@ avoiding increasing complexity untill individual sub-systems are proven._
 
 Now, we need a power source, it is a bench power supply. There are two channels available in the bench power supply. One of them, the first channel is used to provide power to the Circuit and the other one which is the second channel used to provide the variable voltage to control the source current of the circuit. As the control voltage is applied from an external source, both channels need to be in the same potential, thus the ground terminal of the second channel is connected across the first channel ground terminal."
 
+### LTspice modelling
+Most linear response found. Will work with 3v3 logic
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/24817674-8046-4430-89f8-011a9acf5891)
 
 
 
