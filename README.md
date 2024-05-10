@@ -17,8 +17,8 @@ NOTE: _This is an attempt to design a medical product to deliver current through
 Any attempt to follow the designs or guides within this repo are undertaken ENTIRELY at the users own risk._ 
 
 ## Design Goals
-- Safe & Consistant operation of a constant current source, able to deliver up to 2.0 mA in pulses of up to 10s between probes attached to users skin.
-- Current Source should be controllable down to 0.0 mA, with a resolution of at least 0.2 mA and accuracy of +-0.2 mA. (Exact values to be reviewed)
+- [G1] Safe & Consistant operation of a constant current source, able to deliver up to 2.0 mA in pulses of up to 10s between probes attached to users skin.
+- [G2] Current Source should be controllable down to 0.0 mA, with a resolution of at least 0.2 mA and accuracy of +-0.2 mA. (Exact values to be reviewed)
 - Timer pulse should be controllable down to 1.0 mS, with a resolution of at least 0.5 mS, and accuracy of +-0.2 mS. (Exact values to be reviewed)
 - 0-2 mA current to voltage sensor with a resolution of at least 0.2 mA and accuracy of +-0.2 mA (Exact values to be reviewed)
 - Operation from 3S or less LiPo battery pack. (Can be reviewed and voltage increased if nessissary to achieve other design goals)
@@ -77,6 +77,30 @@ Now, we need a power source, it is a bench power supply. There are two channels 
 Most linear response found. Will work with 3v3 logic
 ![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/24817674-8046-4430-89f8-011a9acf5891)
 ![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/ee70646f-9a43-44bd-b7c0-aad7430b6b55)
+
+Increasing voltage to 27 to match origional (3x 9v)
+Commands Used:
+- `.dc V2 0 5 0.1`
+- Now shows almost linear response across the entire control voltage range
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/08384ca2-f880-4f20-8bc2-eaac25e927ce)
+
+Testing current setpoint given change in R3 (sweep from 0R to 10M)
+Commands used:
+- `.step param R3 list 0R 1R 10R 100R 1K 10k 100k 1000k 10000k`
+- `.op`
+- Shows constant current through changing load
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/4b596783-c94c-46f2-bc84-4b8f3fc0266a)
+
+### Calculating DAC Resolution (10 bit)
+- ADC max val = 1023
+- Max Current output = 2.36 mA
+- Max Current / Max ADC = 0.00231 mA per ADC
+- Resolution of 0.002 mA is possible using Arduino ADC, though slight non-liniarity at the lowest control voltage
+- MEETS DESIGN GOAL [G2] Resolution of 0.2mA
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/95e89b84-3562-49b1-9dfa-3c0feba3fbb1)
+(Source - [eee-calculator](https://github.com/PanGalacticTech/engineering-calculator-2023)
+
+
 
 
 
