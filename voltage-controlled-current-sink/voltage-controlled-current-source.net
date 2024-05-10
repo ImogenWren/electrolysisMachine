@@ -1,0 +1,20 @@
+* D:\KiCAD 6.0\KiCad6.0 PROJECTS\electrolysisMachine\voltage-controlled-current-sink\voltage-controlled-current-source.asc
+XU1 N005 N002 Vsupply 0 N003 level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+V1 Vsupply 0 27
+V2 Vcontrol 0 5
+R1 N006 N002 10k
+R2 N006 0 2
+R3 Vsupply N001 1k
+M1 N001 N004 N006 N006 NMOS
+R4 N004 N003 10k
+R5 N005 0 100
+R6 N005 Vcontrol 100k
+.model NMOS NMOS
+.model PMOS PMOS
+.lib G:\onedrive\Documents\LTspiceXVII\lib\cmp\standard.mos
+.dc V2 0 5 0.1
+;step param R3 list 0R 1R 10R 100R 1K 10k 100k 1000k 10000k
+;op
+.lib UniversalOpamps2.sub
+.backanno
+.end
