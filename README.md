@@ -125,18 +125,44 @@ Using Commands:
 ` step param R3 list 0R 1R 10R 100R 1K 10k 100k 1000k 10000k` // step R3 to show constant current regardsless of load <br>
 
 Tested with a few different C1 values, nothing showed significant DC smoothing untill 100 uF, shown below:
-![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/9d50345e-7f33-4148-a21c-95edab685641)
 
+DC Voltage Ripple:
+
+DC Current Ripple: 1.30 - 1.18 = 12 mA
 
 Next try modelling with smaller value capacitors in paralellel
 
-![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/5e2e5dfc-5853-446f-93d1-eefb6451baae)
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/f38141b7-cebf-494b-8194-32d6db9f25b3)
+
+DC Current Ripple: 1.30 - 1.18 = 12 mA
+
+NO change!
+ 100uF is likely optimal for this purpose, though introduces a slower current rise & fall time. 
+
+### Testing capacative filter on output of OP-AMP to mosfet
+Now lowpass filter with 10k, 
+
+100uF = 0.16 cutoff frequency
+
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/2d016e8b-6273-4a3a-913c-91facf9f598c)
+Ramp takes over half a second to reach full power, this may assit in reducing pain or shock, or may prolong pain. Certainly will not be suitable for cutting power to probe.
+
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/eab666d7-24b3-4b8b-b559-8453b0b1913d)
+
+
+At 1u, ramp up is only 60mS, current ripple of: 1.26 - 1.224 = 0.036mA ripple this is very acceptable. Wave has also been smoothed to sinusoildal. Could this have an effect on pain?
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/1c03c5b5-0295-44e5-af2b-37906526d532)
 
 
 
+>
+>
+------------------------------------------------------------------------
+>
+>
 
 
-## State-of-the-Art
+# State-of-the-Art
 
 ### Description of the Existing Reddit Design
 
