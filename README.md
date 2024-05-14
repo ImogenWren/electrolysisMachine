@@ -100,6 +100,38 @@ Commands used:
 ![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/95e89b84-3562-49b1-9dfa-3c0feba3fbb1)
 (Source - [eee-calculator](https://github.com/PanGalacticTech/engineering-calculator-2023)
 
+### Accounting for PWM
+As the control voltage from the microcontroller will be PWM, rather than a descrete voltage, this should be added to the simulation. This may not matter, as average current delivered will be the same, however in the origional design the current supplied was constant, not pulsed and I wish to at least attempt to replicate that. A decision can be made later which outcome is better, though this might require testing which will be hard to quantify if I am the only test subject.
+
+### Origional Design modelling PWM control voltage
+Arduino nano PWM frequency = 490.2 (this can be changed but why change if not required)
+Period = 1/490.2 = 2.04 mS 
+Model PWM frequency at 2 mS period, with 50% Duty
+Using Commands: 
+`.tran 0 1 0 0.1 startup` // DC Transfer for 1 second after startup <br>
+`**PULSE(0 5 0 0 0 1m 2m 0)**` // Pulse voltage source <br>
+` step param R3 list 0R 1R 10R 100R 1K 10k 100k 1000k 10000k` // step R3 to show constant current regardsless of load <br>
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/4bfb3f53-d18b-41ef-97b9-bb0ef0713afe)
+This shows that the output will also be pulsed, the first attempt to remove this pulse will be the addition of a capacitor to the control voltage. Placed after the 100k resistor, this will form a low pass filter, for which the cutoff frequency must be pushed as low as possible to block all but DC.
+
+Selecting 
+> capacitor: 1 uF = cutoff_frequency: 1.59 Hz
+> capacitor: 10 uF = cutoff_frequency: 0.16 Hz
+> 
+ Modelling with 1uF capacitor as these are cheaper and easier to source without going to electrolytic.
+Using Commands: 
+`.tran 0 1 0 0.1 startup` // DC Transfer for 1 second after startup <br>
+`**PULSE(0 5 0 0 0 1m 2m 0)**` // Pulse voltage source <br>
+` step param R3 list 0R 1R 10R 100R 1K 10k 100k 1000k 10000k` // step R3 to show constant current regardsless of load <br>
+
+Tested with a few different C1 values, nothing showed significant DC smoothing untill 100 uF, shown below:
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/9d50345e-7f33-4148-a21c-95edab685641)
+
+
+Next try modelling with smaller value capacitors in paralellel
+
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/5e2e5dfc-5853-446f-93d1-eefb6451baae)
+
 
 
 
