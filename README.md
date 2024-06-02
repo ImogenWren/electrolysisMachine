@@ -46,27 +46,29 @@ _These steps are each created with the intent of de-risking the project as quick
 by focusing on small functional prototypes that can be intergrated at the earliest opportunity,
 avoiding increasing complexity untill individual sub-systems are proven._
 
-1. Model voltage controlled, 0-2mA constant current driver in LTspice. []
+1. Model voltage controlled, 0-2mA constant current driver in LTspice. [x]
+ - 1b. Model Power Supply []
 2. Construct Current source prototype & Test. []
 3. Model 0-2 mA current to 0-5 V sensing circuit in LTspice. []
 4. Construct current sensor prototype & test. []
 5. Integrate current sensor with Arduino controller and test ability to meet sensitivity requirements. []
 6. Integrade constant current driver with Arduino controller, including manual (pot) controls, and test accuracy of output pulse against requirements. [] <br>
-6b. Create Alpha Version firmware for manual operation of the PULSE_OUTPUT  [] 
-8. Model circuit protection concepts in LTspice. []
-9. Integrate passive circuit protection to existing prototypes (if possible) and test against requirements.[]
-10. Integrate User Interface with existing prototypes and test function of dsiplay & all input devices. []
-11. Finalise schematic & Design PCB [] <br>
-10b. Start design of 3D printed enclosure, to coencide with PCB design (Though should not block PCB design or production) []
-12. Develop Beta version firmware including Functional user interface. []
-13. Build Production prototype. []
-14. Test Beta Firmware with Production prototype. []
-15. Release Verified V1.0.0 PCB design & Make PCBs available to purchase. []
-16. Release production Firmware. []
-17. Develop "DIY Kit" Including build & user guides. []
+- 6b. Create Alpha Version firmware for manual operation of the PULSE_OUTPUT  [] 
+7. Model circuit protection concepts in LTspice. []
+8. Integrate passive circuit protection to existing prototypes (if possible) and test against requirements.[]
+9. Integrate User Interface with existing prototypes and test function of dsiplay & all input devices. []
+10. Finalise schematic & Design PCB [] <br>
+- 10b. Start design of 3D printed enclosure, to coencide with PCB design (Though should not block PCB design or production) []
+11. Develop Beta version firmware including Functional user interface. []
+12. Build Production prototype. []
+13. Test Beta Firmware with Production prototype. []
+14. Release Verified V1.0.0 PCB design & Make PCBs available to purchase. []
+15. Release production Firmware. []
+16. Develop "DIY Kit" Including build & user guides. []
 
 # Project Log
-## Phase 1: Model Voltage Controlled Current Source
+
+## Step 1: Model Voltage Controlled Current Source
 - Current Servo, Voltage Controlled Current Source
  ![Op-Amp-Voltage-Controlled-Current-Source-Circuit-Diagram](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/14538ed3-4064-43b1-9a8e-5d472b6c1dae)
 "The third requirement is the shunt resistor. Let's stick into 1ohms 2watt resistor. Additional two resistors are required, one for the MOSFET gate resistor and the other one is the feedback resistor. These two are required for reducing the loading effect. However, the drop between these two resistors is negligible.
@@ -152,6 +154,31 @@ Ramp takes over half a second to reach full power, this may assit in reducing pa
 
 At 1u, ramp up is only 60mS, current ripple of: 1.26 - 1.224 = 0.036mA ripple this is very acceptable. Wave has also been smoothed to sinusoildal. Could this have an effect on pain?
 ![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/1c03c5b5-0295-44e5-af2b-37906526d532)
+
+## Step 1b: Model The Power Supply
+_The power supply needs to be capable of providing the correct current considering all of the possible loads that a paitents skin could offer._
+In order to specify the full requirements for the power supply, we could take data of different peoples skin resistivity, calculate averages, min & max, however. For the first prototypes we will bypass this, and attempt to replicate the power supply used in the origional project. 
+
+This comprised of 3x 9v batteries, or 27v rail-to-rail.
+
+For this implementation we wish to achieve this from a single 12v power supply at most, as these are the most common available. For this we could use a charge pump.
+
+The Charge pump selected is based on the Klon charge pump, which delivers a +18v and -9v output, provided a 9v input, and is based on a readily available ILC7660S Charge pump IC. It can also handle voltages up to 12v, given extensive testing (although this may be slightly out of spec and not reccomended) It does offer an opporunity to regulate a 12v input voltage down to 9v to feed the charge pump a very consistant input voltage.
+
+### Schematic
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/14f57c2c-94e5-44a7-b5dc-35a231df9f59)
+
+
+### Issues with Charge Pump
+- Unable to model circuit I have experience with as cannot find a model for ILC7660S or TL1044 IC
+- In order to get the full 27v rail-to-rail voltage, the negative rail must be used as a virtual ground for the skin probe.
+For this reason, I am not going to worry about modelling the charge pump, I know this circuit is cabable of outputting these voltages, however we must ensure that
+we can modify the current servo implementation to account for the virtual ground, if this is even possible to do.
+
+
+
+
+
 
 
 
