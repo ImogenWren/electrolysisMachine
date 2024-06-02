@@ -197,7 +197,7 @@ _It's battery powered. epilator circuit runs off 3 9v batteries in series, ammet
 Device delivers a voltage thats adjustable from 6v to 22v. Current sink (at probe) is adjustable from 0mA to 2mA. 
 Supply is run through ecg electrode which is placed right next to the site I'm working on. A 555 timer is used to pulse the current sink. 
 I'm using professional electrolysis probes, F4 shank stainless steel. Probe housing is made from a d-sub female crimp pin soldered
-to a wire and covered with a piece of heat shrink tubing. (F4 size probe fits snug into the socket).
+to a wire and covered with a piece of heat shrink tubing. (F4 size probe fits snug into the socket)._
 (abbxrdy, 2018) Accessed: (Reddit 2022)
 
 
