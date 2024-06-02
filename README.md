@@ -239,7 +239,7 @@ max output is now only ~0.55 mA
 ![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/49355dd7-c073-47fd-ad7d-5b114d7c24da)
 
 
-
+_Might have to think a little harder about whats happening in the circuit_
  
  
    
