@@ -175,10 +175,21 @@ The Charge pump selected is based on the Klon charge pump, which delivers a +18v
 For this reason, I am not going to worry about modelling the charge pump, I know this circuit is cabable of outputting these voltages, however we must ensure that
 we can modify the current servo implementation to account for the virtual ground, if this is even possible to do.
 
+## First modelling with -9v virtual ground
+- Note: To get this to run needed to use fixed power supply set to +9v, with positive rail grounded
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/4676e8d9-eed6-4e2c-9d0a-c0c33432b56f)
+- Showed no current controlability, but current output of ~1.7mA
+- After boosting Vsupply to 18v (as if from charge pump) Then current output is able to deliver 2.2mA but still uncontrolled.
 
+## Next trying different groundings (virtual/real)
+- Ensure ap-amp is bipolar
+- added protection diode to Vcontrol to protect microcontroller from negative voltages
 
+Best option found so far using virtual grounds:
 
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/8270e5dd-c864-42ee-b7d5-15ac27f09d07)
 
+Not great: Controllable down to  ~0.65mA and up to ~1.8mA, must be able to go to 0.0 mA
 
 
 
