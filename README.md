@@ -175,6 +175,9 @@ This next attempt will use this basic building block: <br>
 
 We could potentially use the microcontroller itself to provide the PWM for the charge pump, this may be explored later, but first we will keep things as simple as possible and model with a 555 timer.
 
+NE555 Working Voltage: 4.5-16v, fits perfectly with the 12v supply voltage specification.
+
+
 
 
 
