@@ -184,8 +184,18 @@ https://pangalactictech.com/12v-dc-to-300v-dc-smps/
 
 NE555 Working Voltage: 4.5-16v, fits perfectly with the 12v supply voltage specification.
 
+#### Modelling Charge Pump
+_Initial Results Promising_
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/b9f7da40-d6aa-4cde-872a-96d45d52f22a)
+
+stable 36v output given 12v input
+
+next test CV frequency sweep - cant set up correctly
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/eacac20e-c940-4e67-9644-a53552f214a6)
+Tested at different CV, rise time differed but max V output did not
 
 
+Then test with varying loads
 
 
 
