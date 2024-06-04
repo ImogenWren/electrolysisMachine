@@ -197,6 +197,7 @@ Tested at different CV, rise time differed but max V output did not
 
 Then test with varying loads
 
+Decreased R8 t0 4k7, increased frequency to 114 KHz
 
 
  
