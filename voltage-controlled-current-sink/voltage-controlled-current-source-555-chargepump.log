@@ -1,4 +1,10 @@
-Circuit: * C:\Users\dheard\Documents\0001-Arduino\electrolysisMachine\voltage-controlled-current-sink\voltage-controlled-current-source-555-chargepump.asc
+LTspice 24.0.12 for Windows
+Circuit: * D:\KiCAD 6.0\KiCad6.0 PROJECTS\electrolysisMachine\voltage-controlled-current-sink\voltage-controlled-current-source-555-chargepump.asc
+Start Time: Wed Jun  5 00:13:25 2024
+solver = Normal
+Maximum thread count: 8
+
+
 
 Limiting rise time of source v3 to 0.0001
 Limiting fall time of source v3 to 0.0001
@@ -7,11 +13,12 @@ WARNING: Node NC_02 is floating.
 WARNING: Less than two connections to node n001.  This node is used by v2.
 WARNING: Less than two connections to node nc_01.  This node is used by d1.
 WARNING: Less than two connections to node nc_02.  This node is used by d1.
+WARNING: Less than two connections to node pwm_sine.  This node is used by v5.
 Direct Newton iteration for .op point succeeded.
 .step vval=0
-Singular matrix:  Check node nc_01
+Singular matrix:  Check node nc_02
    Iteration No. 2
-Fatal Error: Singular matrix:  check node nc_01
+Fatal Error: Singular matrix:  check node nc_02
    Iteration No. 2
 
 This circuit has floating nodes.
