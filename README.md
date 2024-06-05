@@ -199,8 +199,14 @@ Then test with varying loads
 
 Decreased R8 t0 4k7, increased frequency to 114 KHz
 
+## Simulating pulse in LTspice
+_Finally learned to set waveform using frequency & duty cycle_
 
- 
+At duty cycle of:
+0.2 = 21.3v output
+other duty cycles no difference
+
+but lower input v of 5v = lower output voltage. need additional diode stage or higher PWM voltage
    
 
 - 
