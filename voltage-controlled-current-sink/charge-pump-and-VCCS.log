@@ -1,0 +1,6 @@
+Circuit: * C:\Users\dheard\Documents\0001-Arduino\electrolysisMachine\voltage-controlled-current-sink\charge-pump-and-VCCS.asc
+
+Limiting rise time of source v3 to 0.0001
+Limiting fall time of source v3 to 0.0001
+WARNING: Less than two connections to node n001.  This node is used by v2.
+Direct Newton iteration for .op point succeeded.
