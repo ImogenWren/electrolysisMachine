@@ -197,6 +197,13 @@ Tested at different CV, rise time differed but max V output did not
 
 Then test with varying loads
 
+tested with additionally diode stage and suitable load:
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/8c3fedfa-c0ec-44b7-ad5d-a58bdc3bba4f)
+
+going to try adding one more diode stage
+![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/26914682-de31-4aea-aa29-c1ed5b355d51)
+ Peak voltage of ~30v, capable of just over 30mA of current, 
+
 Decreased R8 t0 4k7, increased frequency to 114 KHz
 
 ## Simulating pulse in LTspice
