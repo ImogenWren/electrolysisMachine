@@ -215,8 +215,31 @@ other duty cycles no difference
 
 but lower input v of 5v = lower output voltage. need additional diode stage or higher PWM voltage
    
+### Current of PWM Signal
+I decided to check the current required to deliver the simulations shown above, during inrush
 
-- 
+- First looking at inrush current:
+- -![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/9c0d51df-91b0-468d-bce9-eb18cf90f545)
+- ~100 A
+
+
+- Then looking at each pulse as steady state is reached:
+- ![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/27de97b1-40ea-42b9-877b-afaa9c00eec6)
+- Still pulling about 2.5 A
+
+This is absolutly not suitable, microcontroller pins can source about 20-40mA at max. For longevity, we wil try and keep it to about 20 mA
+
+- R = V/I
+- R = 5/0.020 = 250 ohm
+- So lets put a series resistor in the PWM path to limit the current to this value
+
+-Current limited to 18mA BUT Vout now limited to 11.5 v
+- ![image](https://github.com/ImogenWren/electrolysisMachine/assets/97303986/defa17e2-9757-4180-9f73-e390d0654a81)
+
+- So PWm needs to be amplified, simple transistor will do or does this charge pump approach have a fundemental flaw?
+
+
+
 
 >
 >
