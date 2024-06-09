@@ -1,6 +1,10 @@
 LTspice 24.0.12 for Windows
 Circuit: * D:\KiCAD 6.0\KiCad6.0 PROJECTS\electrolysisMachine\voltage-controlled-current-sink\charge-pump-and-VCCS.asc
-Start Time: Sat Jun  8 20:18:13 2024
+Start Time: Sun Jun  9 01:03:00 2024
+Warning: Multiple definitions of model "2scr375p" Type: BJT
+Warning: Multiple definitions of model "bc857b" Type: BJT
+Warning: Multiple definitions of model "bc847c" Type: BJT
+Warning: Multiple definitions of model "bc847b" Type: BJT
 solver = Normal
 Maximum thread count: 8
 tnom = 27
@@ -8,11 +12,23 @@ temp = 27
 method = modified trap
 Limiting rise time of source v3 to 0.0001
 Limiting fall time of source v3 to 0.0001
-WARNING: Less than two connections to node n001.  This node is used by v2.
+WARNING: Node N006 is floating.
+
+WARNING: Less than two connections to node n007.  This node is used by v2.
+WARNING: Less than two connections to node n003.  This node is used by d9.
 Direct Newton iteration for .op point succeeded.
-Heightened Def Con from 0.7061 to 0.7061
-Heightened Def Con from 0.7712 to 0.7712
-Heightened Def Con from 0.8412 to 0.8412
-Heightened Def Con from 0.9812 to 0.9812
-Total elapsed time: 83.197 seconds.
+Heightened Def Con from 0.001601 to 0.001601
+Heightened Def Con from 0.001601 to 0.001601
+Heightened Def Con from 0.002651 to 0.002651
+Heightened Def Con from 0.003801 ++++++++++++++++++++++++to 0.003801
+Heightened Def Con from 0.003801 to 0.003801
+Heightened Def Con from 0.003851 to 0.003851
+Heightened Def Con from 0.007251 to 0.007251
+Heightened Def Con from 0.007651 ++++++++++++++++++++++to 0.007651
+Heightened Def Con from 0.007651 to 0.007651
+Heightened Def Con from 0.008826 to 0.008826
+Heightened Def Con from 0.009401 +++++++++++++++++++++to 0.009401
+Heightened Def Con from 0.009401 +++++++++++++++++++++++to 0.009401
+Heightened Def Con from 0.009401 to 0.009401
+Total elapsed time: 72.899 seconds.
 
