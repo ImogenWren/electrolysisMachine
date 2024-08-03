@@ -72,8 +72,16 @@ _The schematic is the most up to date & tested version of each sub system_
 
 ### Power Supply
 This circuit has been tested with a 12v power supply, driven from a microcontroller. Duty cycle did not affect voltage generated untill the extremes.
-Tested using microcontroller for PWM signal, finished version will be driven by 555 timer.
+Tested using microcontroller for PWM signal, finished version will be driven by 555 timer. <br>
+
 ![image](https://github.com/user-attachments/assets/d14e9ac6-de4b-4b2e-9438-3b823b4669ad)
+![image](https://github.com/user-attachments/assets/a27c9824-72dd-4d0a-b0ae-ddccf8a522c5)
+555 Circuit Values:
+- R1: 100k
+- R2: 1.5k (sets frequency to 48kHz)
+- C1: 10n (sets frequency to 48kHz)
+
+Breadboarded & tested, can deliver 2.09 mA @ 32v, unloaded maxV = 45
 
 
 
