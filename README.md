@@ -74,7 +74,7 @@ _The schematic is the most up to date & tested version of each sub system_
 This circuit has been tested with a 12v power supply, driven from a microcontroller. Duty cycle did not affect voltage generated untill the extremes.
 Tested using microcontroller for PWM signal, finished version will be driven by 555 timer. <br>
 
-- Use LM317 to regulate to 30v
+- Use LM317 to regulate to 30v (https://www.homemade-circuits.com/how-to-build-simplest-variable-power/) NOTE: This could maybe be used as current source
 
 ![image](https://github.com/user-attachments/assets/d14e9ac6-de4b-4b2e-9438-3b823b4669ad)
 ![image](https://github.com/user-attachments/assets/a27c9824-72dd-4d0a-b0ae-ddccf8a522c5)
