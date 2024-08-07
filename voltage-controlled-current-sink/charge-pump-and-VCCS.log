@@ -1,6 +1,6 @@
 LTspice 24.0.12 for Windows
 Circuit: * D:\KiCAD 6.0\KiCad6.0 PROJECTS\electrolysisMachine\voltage-controlled-current-sink\charge-pump-and-VCCS.asc
-Start Time: Sun Jun  9 01:03:00 2024
+Start Time: Thu Aug  8 00:19:20 2024
 Warning: Multiple definitions of model "2scr375p" Type: BJT
 Warning: Multiple definitions of model "bc857b" Type: BJT
 Warning: Multiple definitions of model "bc847c" Type: BJT
@@ -23,12 +23,9 @@ Heightened Def Con from 0.002651 to 0.002651
 Heightened Def Con from 0.003801 ++++++++++++++++++++++++to 0.003801
 Heightened Def Con from 0.003801 to 0.003801
 Heightened Def Con from 0.003851 to 0.003851
-Heightened Def Con from 0.007251 to 0.007251
-Heightened Def Con from 0.007651 ++++++++++++++++++++++to 0.007651
-Heightened Def Con from 0.007651 to 0.007651
-Heightened Def Con from 0.008826 to 0.008826
-Heightened Def Con from 0.009401 +++++++++++++++++++++to 0.009401
-Heightened Def Con from 0.009401 +++++++++++++++++++++++to 0.009401
+Heightened Def Con from 0.007576 to 0.007576
+Heightened Def Con from 0.007601 +++++++++++++++++++++++++to 0.007601
+Heightened Def Con from 0.009201 ++++++++++++++++++to 0.009201
 Heightened Def Con from 0.009401 to 0.009401
-Total elapsed time: 72.899 seconds.
+Total elapsed time: 4.127 seconds.
 
