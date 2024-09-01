@@ -1,0 +1,15 @@
+LTspice 24.0.12 for Windows
+Circuit: * D:\KiCAD 6.0\KiCad6.0 PROJECTS\electrolysisMachine\current_servo_validation_model.asc
+Start Time: Sun Sep  1 23:32:02 2024
+Warning: Multiple definitions of model "2scr375p" Type: BJT
+Warning: Multiple definitions of model "bc857b" Type: BJT
+Warning: Multiple definitions of model "bc847c" Type: BJT
+Warning: Multiple definitions of model "bc847b" Type: BJT
+solver = Normal
+Maximum thread count: 8
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.214 seconds.
+
