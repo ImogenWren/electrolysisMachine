@@ -1,6 +1,12 @@
 # electrolysisMachine
  Schematics & Build Plan for DIY Electrolysis Machine for Hair Removal #transhealth
 
+## Notes
+_I have just been made aware of someone who is following the origional reddit design, and is quite far into the process with PCBs already in production. Please find a link to this project here: https://hexbear.net/post/2795875_
+
+However I am going to carry on with my design, as I believe my version will be far more useable for those that dont have electronic test equipment to hand.
+
+
 
 ## System Description
 This project is an attempt to build a digitallly controlled version of this DIY Hair Electrolysis machine found on the reddit post [i_built_an_electrolysis_machine_epilator](https://www.reddit.com/r/electronics/comments/8ek9dt/i_built_an_electrolysis_machine_epilator/).
