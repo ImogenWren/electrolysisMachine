@@ -105,7 +105,9 @@ Breadboarded & tested, can deliver 2.09 mA @ 32v, unloaded maxV = 45
 <br>
 - execution <br>
 
-![image](https://github.com/user-attachments/assets/6483086d-3edd-49ec-9965-c2648688f4a1)
+_Shows circuit at Vcontrol == 5 V, use to validate against physical circuit_
+![image](https://github.com/user-attachments/assets/3ad14dfc-0747-4236-9a32-62735d58c61e)
+
 
 
 
