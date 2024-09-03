@@ -110,9 +110,19 @@ _Shows circuit at Vcontrol == 5 V, use to validate against physical circuit_
 
 #### Alternative Option found by 410bdf
 ![image](https://github.com/user-attachments/assets/2e2d6040-d90c-4499-95a7-78fac6effc9c)
-TLV9304 
 
-
+#### Parts Values:
+Op Amp: TLV9304 
+Iout: 2.0 mA
+Vin: 27.0 V
+R1: (1, 'ohm')
+R2: (1.33, 'M')
+R3: (1.33, 'M')
+R4: (100, 'ohm')
+R5: (100, 'ohm')
+Av: 7.518796992481203e-05
+Iout: 2.030075187969925 mA
+_Find the python script for this calculation in `precision-current-pump-calc` folder_
 >
 >
 ------------------------------------------------------------------------
