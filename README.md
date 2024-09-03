@@ -110,7 +110,7 @@ _Shows circuit at Vcontrol == 5 V, use to validate against physical circuit_
 
 #### Alternative Option found by 410bdf
 ![image](https://github.com/user-attachments/assets/2e2d6040-d90c-4499-95a7-78fac6effc9c)
-
+TLV9304 
 
 
 >
