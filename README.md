@@ -125,9 +125,19 @@ Av: 7.518796992481203e-05
 Iout: 2.030075187969925 mA
 ```
 _Find the python script for this calculation in `precision-current-pump-calc` folder_
-PASTE MODELLING WITH THESE VALUES HERE -> Something did not work correctly!
+This did not model correctly, so adjusted values are:
+```
+
+
+```
+![image](https://github.com/user-attachments/assets/8954ac02-a318-4e4e-9b0f-4eea0c766c71)
+_Modelling Operating Point @ 5V control voltage, current limited to 2.35 mA_
+- Stable current output across stepped resistor value
+- Linear scaling between Vin & Iout
+
 
 #### Moddelling Done with values for up to 20mA output
+_this is for a different project, I will move it there soon_
 ![image](https://github.com/user-attachments/assets/5cd99dd5-8bff-41bd-af12-4310a7b4347b)
 
 >
