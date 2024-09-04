@@ -117,12 +117,24 @@ def calc_4to20mA_source():
     print(f"Iout: {Iout} mA")
     print_Iout_calc(R1, R2, R3, R4, R5, Vin)
 
+def calc_current_source(R1, R2, R3, R4, R5, Vin):
+    print_Iout_calc(R1, R2, R3, R4, R5, Vin)
+
+
 
 def main():
     #print("Calculating 2.0mA source for Electroylsis")
     #calc_electrolysis_machine()
-    print("Calculating 20mA source for sensor circuit testing")
-    calc_4to20mA_source()
+    #print("Calculating 20mA source for sensor circuit testing")
+    #calc_4to20mA_source()
+    print("Calculating Current Source using passed vals")
+    R1 = 1
+    R2 = 220 * k
+    R3 = 220 * k
+    R4 = 100
+    R5 = 100
+    Vin = 27
+    calc_current_source(R1, R2, R3, R4, R5, Vin)
 
 
 
