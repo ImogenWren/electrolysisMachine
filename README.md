@@ -125,6 +125,11 @@ Av: 7.518796992481203e-05
 Iout: 2.030075187969925 mA
 ```
 _Find the python script for this calculation in `precision-current-pump-calc` folder_
+PASTE MODELLING WITH THESE VALUES HERE -> Something did not work correctly!
+
+#### Moddelling Done with values for up to 20mA output
+![image](https://github.com/user-attachments/assets/5cd99dd5-8bff-41bd-af12-4310a7b4347b)
+
 >
 >
 ------------------------------------------------------------------------
