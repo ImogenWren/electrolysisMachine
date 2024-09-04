@@ -124,11 +124,30 @@ R5: (100, 'ohm')
 Av: 7.518796992481203e-05
 Iout: 2.030075187969925 mA
 ```
-_Find the python script for this calculation in `precision-current-pump-calc` folder_
-PASTE MODELLING WITH THESE VALUES HERE -> Something did not work correctly!
+_Find the python script for this calculation in `precision-current-pump-calc` folder_ <br>
+This did not model correctly, so adjusted values are:
+```
+Vin: 27 V
+R1: (1, 'ohm')
+R2: (220.0, 'k')
+R3: (220.0, 'k')
+R4: (100, 'ohm')
+R5: (100, 'ohm')
+Av: 0.00045454545454545455
+Iout: 12.272727272727272 mA  ?? Python calc is order of magnitude out
+```
+![image](https://github.com/user-attachments/assets/8954ac02-a318-4e4e-9b0f-4eea0c766c71)
+_Modelling Operating Point @ 5V control voltage, current limited to 2.35 mA_
+- Stable current output across stepped resistor value
+- Linear scaling between Vin & Iout
 
-#### Moddelling Done with values for up to 20mA output
-![image](https://github.com/user-attachments/assets/5cd99dd5-8bff-41bd-af12-4310a7b4347b)
+_Modelling I_out for V_ctrl = 0, 5 V_ <br>
+![image](https://github.com/user-attachments/assets/e01eb0ce-68ae-4b9d-9c04-b90b4d97aef3)
+
+
+_Modelling I_out @ V_ctrl = 5 V, R6 = 1, 1 M_<br>
+![image](https://github.com/user-attachments/assets/d0bd63fc-7ccd-4970-87b9-9870a6172373)
+
 
 >
 >
