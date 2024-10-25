@@ -148,6 +148,15 @@ _Modelling I_out for V_ctrl = 0, 5 V_ <br>
 _Modelling I_out @ V_ctrl = 5 V, R6 = 1, 1 M_<br>
 ![image](https://github.com/user-attachments/assets/d0bd63fc-7ccd-4970-87b9-9870a6172373)
 
+## Functional Prototype Layout
+### Power Supply 12v to ~30 V
+_Need testing to find out actual limit of regulator output
+![image](https://github.com/user-attachments/assets/94275945-bf1e-4862-9837-fafd1be8954e)
+
+### Current Servo V1 (Untested)
+_Untested_
+![image](https://github.com/user-attachments/assets/be710a49-dcf4-48f8-8c7a-a6b947073019)
+
 
 >
 >
