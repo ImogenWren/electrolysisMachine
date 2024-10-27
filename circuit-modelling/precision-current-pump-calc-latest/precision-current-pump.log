@@ -1,6 +1,6 @@
 LTspice 24.0.12 for Windows
 Circuit: * D:\KiCAD 6.0\KiCad6.0 PROJECTS\electrolysisMachine\circuit-modelling\precision-current-pump-calc\precision-current-pump.asc
-Start Time: Wed Sep  4 22:59:29 2024
+Start Time: Sun Oct 27 21:29:27 2024
 Warning: Multiple definitions of model "2scr375p" Type: BJT
 Warning: Multiple definitions of model "bc857b" Type: BJT
 Warning: Multiple definitions of model "bc847c" Type: BJT
@@ -34,8 +34,8 @@ Semiconductor Device Operating Points:
                         --- Diodes ---
 Name:    d:u1:1      d:u1:2        d3          d4          d5
 Model:    u1:x        u1:x       1n5819      1n5819      1n5819
-Id:     -2.70e-11   -4.64e-15    2.51e-02    2.51e-02    2.51e-02
-Vd:     -2.70e+01   -4.63e-03    2.38e-01    2.38e-01    2.38e-01
+Id:     -2.70e-11   -4.44e-15    2.51e-02    2.51e-02    2.51e-02
+Vd:     -2.70e+01   -4.43e-03    2.38e-01    2.38e-01    2.38e-01
 Req:     1.00e-12    1.00e-12    1.41e+00    1.41e+00    1.41e+00
 CAP:     0.00e+00    0.00e+00    1.21e-10    1.21e-10    1.21e-10
 
@@ -48,8 +48,8 @@ CAP:     1.21e-10    1.21e-10    1.21e-10    1.21e-10    1.21e-10
 
 Name:    d:u2:1      d:u2:2      d:u3:1      d:u3:2
 Model:    u2:x        u2:x        u3:x        u3:x
-Id:     -2.70e-11   -2.39e-15   -2.70e-11   -4.67e-15
-Vd:     -2.70e+01   -2.38e-03   -2.70e+01   -4.67e-03
+Id:     -2.70e-11   -2.18e-15   -2.70e-11   -4.47e-15
+Vd:     -2.70e+01   -2.18e-03   -2.70e+01   -4.47e-03
 Req:     1.00e-12    1.00e-12    1.00e-12    1.00e-12
 CAP:     0.00e+00    0.00e+00    0.00e+00    0.00e+00
 
@@ -374,5 +374,5 @@ Ft:       0.00e+00    0.00e+00
 tnom = 27
 temp = 27
 method = modified trap
-Total elapsed time: 2.645 seconds.
+Total elapsed time: 2.515 seconds.
 
