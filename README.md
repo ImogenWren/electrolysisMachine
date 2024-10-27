@@ -156,10 +156,21 @@ _Need testing to find out actual limit of regulator output
 ### Current Servo V1 (Untested)
 _Untested_
 ![image](https://github.com/user-attachments/assets/be710a49-dcf4-48f8-8c7a-a6b947073019)
+- Op-Amp selection:
 
+| op-amp | Vsupply Max | Rail to Rail? | Output Current |
+|---     |---          |---            |---             |
+|RC4558  | 30          |   no          |
+|LF353   | +-18/36     | + yes, - no   |                |
+| LM358  | 30v         | In to V-      |
 
->
->
+```
+"Rail-to-rail op amps have a range of typical output swings for various devices. A typical output swing for the MAX4091 family is to within 15mV of the supplies with a 100kΩ load. When connected as a voltage-follower, the MAX4321's output swings from 0.02V to 2.97V with a +3V supply and with a 100kΩ load to ground. For the MAX4321 the maximum output-voltage swing depends on the load, but will be within 300mV of a +5V supply, even with the maximum load of 250Ω to ground. When connected as a voltage-follower, the MAX4230 is guaranteed to be within 500mV of the positive rail (VDD = 2.7V) even with maximum load of 32Ω to ground. The output stage for the MAX4240–MAX4244 can drive up to a 10kΩ load and still swing to within 40mV of the rails. Thus the application helps define the proper part."
+https://www.analog.com/en/resources/technical-articles/railtorail-railroading-and-the-electronics-of-op-amps.html
+```
+- A rail-to-rail operational amplifier like the TLV24xx family can use the full span of the supply range
+- https://www.ti.com/lit/ds/symlink/opa4342.pdf?ts=1730072190619&ref_url=https%253A%252F%252Fduckduckgo.com%252F rail to rail but maxV is 5.5
+- 
 ------------------------------------------------------------------------
 >
 >
