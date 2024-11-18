@@ -170,6 +170,14 @@ https://www.analog.com/en/resources/technical-articles/railtorail-railroading-an
 ```
 - A rail-to-rail operational amplifier like the TLV24xx family can use the full span of the supply range
 - https://www.ti.com/lit/ds/symlink/opa4342.pdf?ts=1730072190619&ref_url=https%253A%252F%252Fduckduckgo.com%252F rail to rail but maxV is 5.5
+
+## Analysis of circuits so far:
+- Circuit is unable to provide current less than 3.5mA, up to 20mA, so may be ideal for DACduino project, but seems like a dead end for this project
+- Going back to research phase
+
+## December 2024 Research
+- https://forum.arduino.cc/t/precision-current-control-and-measurment/282352
+- https://www.allaboutcircuits.com/textbook/semiconductors/chpt-8/voltage-to-current-signal-conversion/
 - 
 ------------------------------------------------------------------------
 >
