@@ -98,84 +98,7 @@ Breadboarded & tested, can deliver 2.09 mA @ 32v, unloaded maxV = 45
 
 
 
-### Voltage Controlled Current Source
-- Concept <br>
-![328051958-14538ed3-4064-43b1-9a8e-5d472b6c1dae](https://github.com/user-attachments/assets/6d9a9827-29ac-48bd-b1d4-6e73d20aa809)
-
-<br>
-- execution <br>
-
-_Shows circuit at Vcontrol == 5 V, use to validate against physical circuit_
-![image](https://github.com/user-attachments/assets/3ad14dfc-0747-4236-9a32-62735d58c61e)
-
-#### Alternative Option found by 410bdf
-![image](https://github.com/user-attachments/assets/2e2d6040-d90c-4499-95a7-78fac6effc9c)
-
-#### Parts Values:
-```
-Op Amp: TLV9304 
-Iout: 2.0 mA 
-Vin: 27.0 V
-R1: (1, 'ohm')
-R2: (1.33, 'M')
-R3: (1.33, 'M')
-R4: (100, 'ohm')
-R5: (100, 'ohm')
-Av: 7.518796992481203e-05
-Iout: 2.030075187969925 mA
-```
-_Find the python script for this calculation in `precision-current-pump-calc` folder_ <br>
-This did not model correctly, so adjusted values are:
-```
-Vin: 27 V
-R1: (1, 'ohm')
-R2: (220.0, 'k')
-R3: (220.0, 'k')
-R4: (100, 'ohm')
-R5: (100, 'ohm')
-Av: 0.00045454545454545455
-Iout: 12.272727272727272 mA  ?? Python calc is order of magnitude out
-```
-![image](https://github.com/user-attachments/assets/8954ac02-a318-4e4e-9b0f-4eea0c766c71)
-_Modelling Operating Point @ 5V control voltage, current limited to 2.35 mA_
-- Stable current output across stepped resistor value
-- Linear scaling between Vin & Iout
-
-_Modelling I_out for V_ctrl = 0, 5 V_ <br>
-![image](https://github.com/user-attachments/assets/e01eb0ce-68ae-4b9d-9c04-b90b4d97aef3)
-
-
-_Modelling I_out @ V_ctrl = 5 V, R6 = 1, 1 M_<br>
-![image](https://github.com/user-attachments/assets/d0bd63fc-7ccd-4970-87b9-9870a6172373)
-
-## Functional Prototype Layout
-### Power Supply 12v to ~30 V
-_Need testing to find out actual limit of regulator output
-![image](https://github.com/user-attachments/assets/94275945-bf1e-4862-9837-fafd1be8954e)
-
-### Current Servo V1 (Untested)
-_Untested_
-![image](https://github.com/user-attachments/assets/be710a49-dcf4-48f8-8c7a-a6b947073019)
-- Op-Amp selection:
-
-| op-amp | Vsupply Max | Rail to Rail? | Output Current |
-|---     |---          |---            |---             |
-|RC4558  | 30          |   no          |
-|LF353   | +-18/36     | + yes, - no   |                |
-| LM358  | 30v         | In to V-      |
-
-```
-"Rail-to-rail op amps have a range of typical output swings for various devices. A typical output swing for the MAX4091 family is to within 15mV of the supplies with a 100kΩ load. When connected as a voltage-follower, the MAX4321's output swings from 0.02V to 2.97V with a +3V supply and with a 100kΩ load to ground. For the MAX4321 the maximum output-voltage swing depends on the load, but will be within 300mV of a +5V supply, even with the maximum load of 250Ω to ground. When connected as a voltage-follower, the MAX4230 is guaranteed to be within 500mV of the positive rail (VDD = 2.7V) even with maximum load of 32Ω to ground. The output stage for the MAX4240–MAX4244 can drive up to a 10kΩ load and still swing to within 40mV of the rails. Thus the application helps define the proper part."
-https://www.analog.com/en/resources/technical-articles/railtorail-railroading-and-the-electronics-of-op-amps.html
-```
-- A rail-to-rail operational amplifier like the TLV24xx family can use the full span of the supply range
-- https://www.ti.com/lit/ds/symlink/opa4342.pdf?ts=1730072190619&ref_url=https%253A%252F%252Fduckduckgo.com%252F rail to rail but maxV is 5.5
-
-## Analysis of circuits so far:
-- Circuit is unable to provide current less than 3.5mA, up to 20mA, so may be ideal for DACduino project, but seems like a dead end for this project
-- Going back to research phase
-
-## December 2024 Research
+## December 2024 Research -> Current Controller
 - https://forum.arduino.cc/t/precision-current-control-and-measurment/282352
 - https://www.allaboutcircuits.com/textbook/semiconductors/chpt-8/voltage-to-current-signal-conversion/
 
@@ -186,7 +109,9 @@ https://www.analog.com/en/resources/technical-articles/railtorail-railroading-an
 - Layouyt:
 - ![image](https://github.com/user-attachments/assets/fd00f59e-8803-4c10-aa2e-3f1c3e7ed494)
 
-
+## December 2024 Research -> Current Measure:
+- https://www.adafruit.com/product/904
+  - "A precision amplifier measures the voltage across the 0.1 ohm, 1% sense resistor. Since the amplifier maximum input difference is ±320mV this means it can measure up to ±3.2 Amps. With the internal 12 bit ADC, the resolution at ±3.2A range is 0.8mA. With the internal gain set at the minimum of div8, the max current is ±400mA and the resolution is 0.1mA"
 ------------------------------------------------------------------------
 >
 >
