@@ -183,6 +183,10 @@ https://www.analog.com/en/resources/technical-articles/railtorail-railroading-an
 ![image](https://github.com/user-attachments/assets/5acca359-772f-4544-8e65-be09f5d36002)
 - Modelled correctly and is even simpler than previous topologies
 
+- Layouyt:
+- ![image](https://github.com/user-attachments/assets/fd00f59e-8803-4c10-aa2e-3f1c3e7ed494)
+
+
 ------------------------------------------------------------------------
 >
 >
