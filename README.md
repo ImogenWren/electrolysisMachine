@@ -178,7 +178,11 @@ https://www.analog.com/en/resources/technical-articles/railtorail-railroading-an
 ## December 2024 Research
 - https://forum.arduino.cc/t/precision-current-control-and-measurment/282352
 - https://www.allaboutcircuits.com/textbook/semiconductors/chpt-8/voltage-to-current-signal-conversion/
-- 
+
+## Circuit 2: Transconductance Amplifier
+![image](https://github.com/user-attachments/assets/5acca359-772f-4544-8e65-be09f5d36002)
+- Modelled correctly and is even simpler than previous topologies
+
 ------------------------------------------------------------------------
 >
 >
