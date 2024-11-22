@@ -54,7 +54,7 @@ avoiding increasing complexity untill individual sub-systems are proven._
 
 1. Model voltage controlled, 0-2mA constant current driver in LTspice. [x]
  - 1b. Model Power Supply [x]
-2. Construct Current source prototype & Test. []
+2. Construct Current source prototype & Test. [x]
    - 2b. Construct and test power supply. [x]
 3. Model 0-2 mA current to 0-5 V sensing circuit in LTspice. []
 4. Construct current sensor prototype & test. []
@@ -105,6 +105,7 @@ Breadboarded & tested, can deliver 2.09 mA @ 32v, unloaded maxV = 45
 ## Circuit 3: Transconductance Amplifier
 ![image](https://github.com/user-attachments/assets/5acca359-772f-4544-8e65-be09f5d36002)
 - Modelled correctly and is even simpler than previous topologies
+- Tested & working with 358C Op-Amp
 
 - Layouyt:
 - ![image](https://github.com/user-attachments/assets/fd00f59e-8803-4c10-aa2e-3f1c3e7ed494)
