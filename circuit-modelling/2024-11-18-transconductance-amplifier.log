@@ -1,21 +1,56 @@
 Circuit: * C:\Users\dheard\Documents\0001-Arduino\electrolysisMachine\circuit-modelling\2024-11-18-transconductance-amplifier.asc
 
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+vernier = 0.5
+Gmin = 0.000275318
+vernier = 0.666667
+vernier = 0.888888
+Gmin = 6.27402e-05
+vernier = 1
+Gmin = 7.53781e-06
+Gmin = 8.09366e-07
+Gmin = 8.6905e-08
+Gmin = 9.33136e-09
+Gmin = 1.00195e-09
+Gmin = 1.07583e-10
+Gmin = 1.15517e-11
+Gmin = 1.24035e-12
+Gmin = 1.33182e-13
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
 
-Date: Mon Nov 18 16:31:50 2024
-Total elapsed time: 0.055 seconds.
+Semiconductor Device Operating Points:
+                        --- Diodes ---
+Name:    d:u1:1      d:u1:2
+Model:    u1:x        u1:x
+Id:     -2.20e-11   -5.02e-12
+Vd:     -2.20e+01   -5.01e+00
+Req:     1.00e-12    1.00e-12
+CAP:     0.00e+00    0.00e+00
+
+
+
+Date: Tue Nov 19 13:48:23 2024
+Total elapsed time: 3.016 seconds.
 
 tnom = 27
 temp = 27
 method = trap
-totiter = 1045
+totiter = 528
 traniter = 0
 tranpoints = 0
 accept = 0
 rejected = 0
 matrix size = 7
-fillins = 0
+fillins = 1
 solver = Normal
-Avg thread counts: 1.9/0.0/2.9/1.9
-Matrix Compiler1: 250 bytes object code size  0.2/0.1/[0.1]
-Matrix Compiler2: 541 bytes object code size  0.1/0.1/[0.1]
+Avg thread counts: 2.8/0.0/7.1/2.8
+Matrix Compiler1: 286 bytes object code size
+Matrix Compiler2: 555 bytes object code size  0.2/0.2/[0.1]
 
