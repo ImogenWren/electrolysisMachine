@@ -50,6 +50,11 @@
   Vtrue(ACD) = 25.00        Correct value should be returned for voltage before divider
 
   ## Calculating I through Load Resistor
+  Using 2k2 as the shunt?
+  I = V/R
+
+  V = V2
+  R = 2k2
 
   ## Calculating Load Resistor
   #TODO first we need to calculate I (to be continued) -> for now, assume I = 2mA
@@ -63,46 +68,34 @@
 #define V1_SENSE A7
 #define V2_SENSE A6
 
-
-#include <autoDelay.h>
-
-autoDelay sampleDelay;
-
-#define SAMPLE_RATE_HZ 10
-
-int16_t sample_delay_mS = 1000 / SAMPLE_RATE_HZ;
+#include "globals.h"
 
 
-float adc_to_voltage(int16_t adc_val) {
-  return float(adc_val) * 0.03223;
-}
-
-// return load resistor in ohm
-int32_t calculate_load_resistor(float Vdrop, float I_mA = 2.0){
-  return int32_t(round((Vdrop/I_mA)*1000));
-}
 
 void setup() {
   Serial.begin(115200);
+  OLEDsetupSimple();  // OLED setup & Splash Screen
+                      //  display.setFont(&FreeSansBold9pt7b);
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.setCursor(0, 0);
+  //  drawDot();   // actually draws square like a boss
+  display.print("Test");
+  display.display();
 }
 
 
-void loop() {
 
+
+
+void loop() {
   if (sampleDelay.millisDelay(sample_delay_mS)) {
-    char buffer[64];
-    char v_one_buf[8];
-    char v_two_buf[8];
-    char v_drop_buf[8];
-   // char r_load_buf[8];
-    float V_one = adc_to_voltage(analogRead(V1_SENSE));
-    float V_two = adc_to_voltage(analogRead(V2_SENSE));
-    float V_drop = V_one - V_two;
-    int32_t Rload = calculate_load_resistor(V_drop, 2.0);
-    dtostrf(V_one, 3, 3, v_one_buf);
-    dtostrf(V_two, 3, 3, v_two_buf);
-    dtostrf(V_drop, 3, 3, v_drop_buf);
-    sprintf(buffer, "V1: %s, V2: %s, Vdrop: %s, Rload: %li ohm", v_one_buf, v_two_buf, v_drop_buf, Rload);
-    Serial.println(buffer);
+    sample_average_inputs();
   }
+
+#if REPORT_ACTIVE == true
+  if (reportDelay.millisDelay(report_delay_mS)) {
+    calculate_and_report();
+  }
+#endif
 }
