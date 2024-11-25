@@ -8,7 +8,7 @@
 #include <Fonts/FreeSansBold9pt7b.h >
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
-#define SCREEN_HEIGHT 32 // OLED display height, in pixels
+#define SCREEN_HEIGHT 64 // OLED display height, in pixels
 
 
 
@@ -16,7 +16,7 @@
 //https://www.hackster.io/yilmazyurdakul/arduino-oled-encoder-simple-menu-system-f9baa1
 
 #define OLED_ADDR   0x3C
-Adafruit_SSD1306 display(-1);
+Adafruit_SSD1306 display(128, 64);
 
 #if (SSD1306_LCDHEIGHT != 64)
 //#error("Height incorrect, please fix Adafruit_SSD1306.h!");
@@ -42,7 +42,7 @@ Adafruit_SSD1306 display(-1);
 
 
 int pxWidth = 120;
-int pxHeight = 30;
+int pxHeight = 60;
 
 // 'Pan Galactic Smol Logo Bitmap Solid2', 120x30px
 const unsigned char panLogo[] PROGMEM = {

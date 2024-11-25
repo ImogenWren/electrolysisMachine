@@ -110,7 +110,7 @@
 #endif
 #if defined SSD1306_128_32
  #define SSD1306_LCDWIDTH  128 ///< DEPRECATED: width w/SSD1306_128_32 defined
- #define SSD1306_LCDHEIGHT  32 ///< DEPRECATED: height w/SSD1306_128_32 defined
+ #define SSD1306_LCDHEIGHT  64 ///< DEPRECATED: height w/SSD1306_128_32 defined
 #endif
 #if defined SSD1306_96_16
  #define SSD1306_LCDWIDTH   96 ///< DEPRECATED: width w/SSD1306_96_16 defined

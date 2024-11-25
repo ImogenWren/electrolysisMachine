@@ -80,7 +80,7 @@ void setup() {
   display.setTextColor(WHITE);
   display.setCursor(0, 0);
   //  drawDot();   // actually draws square like a boss
-  display.print("Test");
+  display.print("blahaj's shocker");
   display.display();
 }
 
@@ -91,11 +91,48 @@ void setup() {
 void loop() {
   if (sampleDelay.millisDelay(sample_delay_mS)) {
     sample_average_inputs();
+    calculate_everything();
+    load_char_strings();
   }
+
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.print("blahaj's shocker");
+
+  display.setCursor(0, 16);
+  display.print("V1:    ");
+  display.print(V_one_buf);
+  display.print(" V");
+
+  display.setCursor(0, 24);
+  display.print("V2:    ");
+  display.print(V_two_buf);
+  display.print(" V");
+
+  display.setCursor(0, 32);
+  display.print("Vdrop: ");
+  display.print(V_drop_buf);
+  display.print(" V");
+
+  display.setCursor(0, 40);
+  display.print("I:     ");
+  display.print(I_shunt_buf);
+  display.print(" mA");
+
+  display.setCursor(0, 48);
+  display.print("Rload: ");
+  display.print(R_load_buf);
+  display.print(" kohm");
+
+
+  display.display();
+
+
 
 #if REPORT_ACTIVE == true
   if (reportDelay.millisDelay(report_delay_mS)) {
-    calculate_and_report();
+
+    generate_report();
   }
 #endif
 }
