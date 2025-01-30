@@ -110,6 +110,10 @@ Breadboarded & tested, can deliver 2.09 mA @ 32v, unloaded maxV = 45
 - Layouyt:
 - ![image](https://github.com/user-attachments/assets/fd00f59e-8803-4c10-aa2e-3f1c3e7ed494)
 
+- Mrs Signal Layout
+![image](https://github.com/user-attachments/assets/c59209ad-f27a-4263-b787-0d0236277da8)
+
+
 ## December 2024 Research -> Current Measure:
 - https://www.adafruit.com/product/904
   - "A precision amplifier measures the voltage across the 0.1 ohm, 1% sense resistor. Since the amplifier maximum input difference is ±320mV this means it can measure up to ±3.2 Amps. With the internal 12 bit ADC, the resolution at ±3.2A range is 0.8mA. With the internal gain set at the minimum of div8, the max current is ±400mA and the resolution is 0.1mA"
