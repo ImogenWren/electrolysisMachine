@@ -1,6 +1,11 @@
 # electrolysisMachine
  Schematics & Build Plan for DIY Electrolysis Machine for Hair Removal #transhealth
 
+## Contributers
+_The following people are thanked for their contribution towards this project_
+ - Imogen Wren -> Electronics Lead
+ - xxxxxx      -> Power Supply & BMS design
+
 ## Notes
 _I have just been made aware of someone who is following the origional reddit design, and is quite far into the process with PCBs already in production. Please find a link to this project here: https://hexbear.net/post/2795875_
 
